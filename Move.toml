@@ -1,0 +1,22 @@
+[package]
+name = "hello_move"
+version = "1.0.0"
+authors = []
+upgrade_policy = "immutable"
+
+[addresses]
+my_addrx = "0x42"
+std = "0x1"
+hello_move = "0xaf812dbbeaa32c3fafcf4c08ab8f0db0139c18f602d3956d024fb4d66b2e826"
+
+# [dev_addresses]
+# chaos_dev = "0xaf812dbbeaa32c3fafcf4c08ab8f0db0139c18f602d3956d024fb4d66b2e826f"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
+
+
