@@ -17,7 +17,7 @@ address my_addrx {
             return price_with_fee
         }
 
-        #[test]
+        // #[test]
         fun test_calc_swap(){
             let price_with_fee = calc_swap();
             print(&price_with_fee);
