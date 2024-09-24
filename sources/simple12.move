@@ -1,4 +1,23 @@
-module my_addrx::simple11 {
+module my_addrx::silenceCompany {
+    use std::vector;
+    friend my_addrx::simple12;
+   
+    public(friend) fun get_company_name() : vector<u8> {
+        return b"silence company"
+    }
+}
+
+script {
+    use my_addrx::simple12;
+    use std::debug;
+    fun do_stuff() {
+        let info = simple12::get_info();
+        debug::print(&info);
+    }
+}
+
+
+module my_addrx::simple12 {
     use std::vector;
     use std::debug::print;
 
@@ -13,6 +32,21 @@ module my_addrx::simple11 {
         age: u8,
         income: u64,
     }
+
+    struct Info has store, key, drop , copy {
+        company_name: vector<u8>,
+        owns: vector<u8>,
+    }
+    
+    public fun get_info() : Info {
+        let silenceCompanyName = my_addrx::silenceCompany::get_company_name();        let info = Info {
+            company_name: b"chaos company",
+            owns: silenceCompanyName,
+        };
+        return info
+    }
+
+
 
     public fun create_employee(_employee: Employee, _employees: &mut Employees) : Employee {
         let newEmployee = Employee {
@@ -57,56 +91,14 @@ module my_addrx::simple11 {
         };
         return isEven
     }
+    
 
     // #[test]
-    fun test_create_employee() {
-        let chaos = Employee {
-            name: b"chaos",
-            age: 21,
-            income: 2000,
-        };
-        let employees = Employees {
-            people : (vector[chaos])
-        };
-        let createdEmployee = create_employee(chaos, &mut employees);
-        assert!(createdEmployee.name == b"chaos", 0);
-        assert!(createdEmployee.age == 21, 0);
-        assert!(createdEmployee.income == 2000, 0)
+    fun test_Friend_func() {
+        let comp = get_info();
+        let comp_name = comp.owns;
+        print(&comp_name);
     }
-
-    // #[test]
-    fun test_increase_income() {
-        let chaos = Employee {
-            name: b"chaos",
-            age: 21,
-            income: 2000,
-        };
-
-        let employees = Employees {
-            people : (vector[chaos])
-        };
-
-        let createdEmployee = create_employee(chaos, &mut employees);
-        let increasedEmp = increase_income(&mut createdEmployee, 200);
-        assert!(increasedEmp.income == 2200, 0)
-    }
-    // #[test]
-    fun test_decrease_income() {
-        let chaos = Employee {
-            name: b"chaos",
-            age: 21,
-            income: 2000,
-        };
-
-        let employees = Employees {
-            people : (vector[chaos])
-        };
-
-        let createdEmployee = create_employee(chaos, &mut employees);
-        let decreasedEmp = decrease_income(&mut createdEmployee, 50);
-        print(&decreasedEmp.income);
-        assert!(decreasedEmp.income == 1950 , 0)
-    }
-
+    
     
 }

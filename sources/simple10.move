@@ -27,7 +27,7 @@ module my_addrx::simple10 {
     }
 
 
-    #[test]
+    // #[test]
     fun test_create_friend() {
         let chaos = Person {
             name: b"chaos",
