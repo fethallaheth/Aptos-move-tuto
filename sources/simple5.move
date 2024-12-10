@@ -14,14 +14,14 @@ module my_addrx::simple5 {
          print(&utf8(b"Correct"));
     }
 
-    // //    #[test]
-    // #[expected_failure]
-    // fun test_function() {
-    //     sample_aport_error(9);
-    // }
-    // //   #[test]
+        #[test]
+    #[expected_failure]
+    fun test_function() {
+        sample_aport_error(9);
+    }
+      #[test]
     
-    // fun test_assert_function() {
-    //     sample_aport_error(10);
-    // }
+    fun test_assert_function() {
+        sample_aport_error(10);
+    }
 }

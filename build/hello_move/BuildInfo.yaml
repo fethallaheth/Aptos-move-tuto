@@ -13,14 +13,14 @@ compiled_package_info:
     std: "0000000000000000000000000000000000000000000000000000000000000001"
     vm: "0000000000000000000000000000000000000000000000000000000000000000"
     vm_reserved: "0000000000000000000000000000000000000000000000000000000000000000"
-  source_digest: E33BED24E0B62A38F09F3A974EB386DB27E3DBEDC65F6CDDD76474A32012E02F
+  source_digest: 5BC15D34B88F10A1BF270178870AE7DFD1CA66872B3EEE181D7C1717C55CEE8E
   build_flags:
-    dev_mode: true
-    test_mode: true
+    dev_mode: false
+    test_mode: false
     override_std: ~
     generate_docs: false
     generate_abis: false
-    generate_move_model: true
+    generate_move_model: false
     full_model_generation: false
     install_dir: ~
     force_recompilation: false

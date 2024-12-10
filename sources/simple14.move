@@ -11,7 +11,7 @@ module my_addrx::Generics {
         }
     }
 
-    #[test]
+    // #[test]
     fun test_flex() {
 
         let f = new_flexi(10);

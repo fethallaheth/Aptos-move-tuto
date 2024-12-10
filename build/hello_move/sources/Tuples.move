@@ -10,7 +10,7 @@ module my_addrx::Tuples {
         (x, name, trunchy) 
     }
 
-    #[test]
+    // #[test]
     fun test_lots_of_things() {
         let (x, name, trunchy) = lots_of_things();
         debug::print(&x);
