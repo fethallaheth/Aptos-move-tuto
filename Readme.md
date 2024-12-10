@@ -15,7 +15,8 @@ Before you begin, ensure you have met the following requirements:
 1. **Clone the repository:**
    ```bash
    git clone <https://github.com/fethallaheth/Aptos-move-tuto.git>
-   cd <Aptos-move-tuto>   ```
+   cd <Aptos-move-tuto>  
+   ```
 
 2. **Install dependencies:**
 
@@ -25,7 +26,8 @@ Before you begin, ensure you have met the following requirements:
 
    Use the Aptos CLI to compile the Move modules:
    ```bash
-   aptos move compile   ```
+   aptos move compile
+   ```
 
 
 ## Contributing
